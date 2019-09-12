@@ -1,5 +1,6 @@
 import React from "react";
 import Textfield from "./Textfield";
+import Counter from "./counter";
 
 const App: React.FC = () => {
     return (
@@ -10,6 +11,17 @@ const App: React.FC = () => {
                 alive={true}
                 person={{ firstName: "Chris", lastName: "Barber-Riley" }}
             />
+
+            <Counter>
+                {(count, setCount) => (
+                    <div>
+                        {count}{" "}
+                        <button onClick={() => setCount(count + 1)}>
+                            click me
+                        </button>
+                    </div>
+                )}
+            </Counter>
         </div>
     );
 };
